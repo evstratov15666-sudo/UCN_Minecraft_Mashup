@@ -1,0 +1,215 @@
+{
+  "melty_version": "1.0",
+  "manifest": {
+    "id": "ultimate-minecraft-night",
+    "name": "Ultimate Minecraft Night",
+    "version": "0.1.0",
+    "description": "Ultimate Custom Night meets Minecraft. Survive 7 nights against animatronics and Minecraft mobs. Collect blocks, craft tools, build defenses, and use dynamite to protect your office.",
+    "authors": ["Mashup Developer"],
+    "license": "fan-project",
+    "remixable": true,
+    "tags": ["ucn", "minecraft", "mashup", "survival", "strategy"]
+  },
+  "games": {
+    "host": {
+      "name": "Ultimate Custom Night",
+      "steam_id": "871720",
+      "platform": "windows",
+      "required": true,
+      "min_version": "1.0",
+      "description": "Main game - provides animatronics, office, and camera system"
+    },
+    "companion": {
+      "name": "Minecraft: Java Edition",
+      "platform": "windows",
+      "launcher": "minecraft",
+      "required": true,
+      "min_version": "1.20",
+      "description": "Source for blocks, mobs, crafting, and survival mechanics"
+    }
+  },
+  "integration": {
+    "type": "hybrid_mod",
+    "entry_point": "src/mods/office-ui.html",
+    "systems": [
+      {
+        "name": "inventory",
+        "file": "src/core/inventory.js",
+        "description": "Minecraft block inventory management"
+      },
+      {
+        "name": "enemies",
+        "file": "src/core/enemies.js",
+        "description": "Combined animatronics + Minecraft mobs system"
+      },
+      {
+        "name": "crafting",
+        "file": "src/core/crafting.js",
+        "description": "Minecraft crafting recipes and mechanics"
+      },
+      {
+        "name": "gameState",
+        "file": "src/core/gameState.js",
+        "description": "Central game state manager"
+      },
+      {
+        "name": "controller",
+        "file": "src/core/controller.js",
+        "description": "Main game orchestrator"
+      }
+    ]
+  },
+  "gameplay": {
+    "modes": {
+      "single_player": {
+        "name": "Single Player",
+        "description": "Solo survival against all threats",
+        "max_players": 1,
+        "enabled": true
+      },
+      "multiplayer": {
+        "name": "Co-op",
+        "description": "Play together (LAN)",
+        "max_players": 4,
+        "enabled": true,
+        "network": "lan"
+      }
+    },
+    "difficulty": {
+      "type": "custom",
+      "system": "per_enemy",
+      "min": 0,
+      "max": 20,
+      "enemies": {
+        "animatronics": {
+          "count": 22,
+          "examples": [
+            "Freddy Fazbear",
+            "Bonnie",
+            "Chica",
+            "Foxy",
+            "Golden Freddy",
+            "Puppet",
+            "Toy Freddy",
+            "Nightmare Freddy"
+          ]
+        },
+        "minecraft_mobs": {
+          "count": 5,
+          "list": ["Creeper", "Enderman", "Wither", "Zombie", "Skeleton"]
+        }
+      }
+    },
+    "nights": {
+      "total": 7,
+      "time_per_night": "8:00",
+      "time_bonus_per_night": "+30 seconds",
+      "progression": "increasing difficulty"
+    },
+    "mechanics": [
+      {
+        "name": "Block Inventory",
+        "description": "Collect and store Minecraft blocks",
+        "source": "Minecraft"
+      },
+      {
+        "name": "Crafting",
+        "description": "Craft tools and defensive structures",
+        "source": "Minecraft"
+      },
+      {
+        "name": "Block Placement",
+        "description": "Place blocks to build defenses",
+        "source": "Minecraft"
+      },
+      {
+        "name": "Dynamite Destruction",
+        "description": "Explosive blocks and threats",
+        "source": "Minecraft + UCN"
+      },
+      {
+        "name": "Enemy AI",
+        "description": "Animatronics behavior system",
+        "source": "Ultimate Custom Night"
+      },
+      {
+        "name": "Mob Behavior",
+        "description": "Minecraft creature AI",
+        "source": "Minecraft"
+      }
+    ]
+  },
+  "ui": {
+    "office_desk": {
+      "path": "src/mods/office-ui.html",
+      "type": "setup_screen",
+      "controls": [
+        "Select Night (1-7)",
+        "Choose Game Mode",
+        "Adjust Animatronics Difficulty",
+        "Adjust Mob Difficulty",
+        "Reset Settings",
+        "Start Night"
+      ]
+    }
+  },
+  "audio": {
+    "ucn_sounds": "inherited",
+    "minecraft_sounds": "integrated",
+    "sfx": [
+      "block_place",
+      "block_break",
+      "dynamite_explosion",
+      "crafting_complete"
+    ]
+  },
+  "localization": {
+    "default": "en",
+    "languages": ["en"]
+  },
+  "settings": {
+    "difficulty_presets": [
+      {
+        "name": "Easy",
+        "description": "Perfect for beginners",
+        "animatronics_base": 2,
+        "mobs_base": 1
+      },
+      {
+        "name": "Medium",
+        "description": "Balanced challenge",
+        "animatronics_base": 5,
+        "mobs_base": 3
+      },
+      {
+        "name": "Hard",
+        "description": "For experienced players",
+        "animatronics_base": 10,
+        "mobs_base": 7
+      },
+      {
+        "name": "Extreme",
+        "description": "All enemies active",
+        "animatronics_base": 20,
+        "mobs_base": 20
+      }
+    ]
+  },
+  "performance": {
+    "recommended_cpu": "i5-8400 or equivalent",
+    "recommended_gpu": "GTX 1060 or equivalent",
+    "recommended_ram": "8GB",
+    "supported_resolutions": ["1920x1080", "1280x720"],
+    "target_fps": 60
+  },
+  "compatibility": {
+    "platforms": ["windows"],
+    "requires_administrator": false,
+    "save_location": "%APPDATA%/Melty/ultimate-minecraft-night"
+  },
+  "links": {
+    "source": "https://github.com/melty-gg/ultimate-minecraft-night",
+    "issues": "https://github.com/melty-gg/ultimate-minecraft-night/issues",
+    "discord": "https://discord.gg/melty-community"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "Ultimate Minecraft Night",
+  "description": "Ultimate Custom Night meets Minecraft: Java Edition. Defend against animatronics and Minecraft mobs while collecting blocks, crafting tools, and using dynamite to protect your office.",
+  "version": "0.1.0",
+  "author": "Mashup Developer",
+  "games": {
+    "host": {
+      "name": "Ultimate Custom Night",
+      "id": "ucn",
+      "required": true
+    },
+    "companion": {
+      "name": "Minecraft: Java Edition",
+      "id": "minecraft_java",
+      "required": true
+    }
+  },
+  "features": [
+    "Minecraft block inventory system",
+    "Crafting mechanics",
+    "Dynamite destruction system",
+    "Minecraft enemies (Creepers, Endermen, Withers, Zombies, Skeletons)",
+    "All original UCN animatronics",
+    "Adjustable AI difficulty (0-20)",
+    "Single player mode",
+    "Multiplayer co-op support",
+    "7 nights progression",
+    "Protected locations (corridors, vents, office desk)"
+  ],
+  "melty": {
+    "type": "mashup",
+    "format": "mod",
+    "compatibility": "windows",
+    "platform": "pc"
+  },
+  "installation": {
+    "requires_hosts": ["ucn", "minecraft_java"],
+    "setup_steps": [
+      "Install Ultimate Custom Night",
+      "Install Minecraft: Java Edition",
+      "Run this mashup through Melty.gg",
+      "Follow one-click installation"
+    ]
+  },
+  "gameplay": {
+    "modes": ["single_player", "multiplayer"],
+    "difficulty_system": {
+      "min": 0,
+      "max": 20,
+      "adjustable_entities": [
+        "All UCN animatronics",
+        "Minecraft Creepers",
+        "Minecraft Endermen",
+        "Minecraft Withers",
+        "Minecraft Zombies",
+        "Minecraft Skeletons"
+      ]
+    },
+    "protected_areas": [
+      "Office corridor",
+      "Ventilation shaft",
+      "Office desk"
+    ],
+    "destructible_areas": [
+      "Walls",
+      "Storage rooms",
+      "Side chambers"
+    ]
+  },
+  "multiplayer": {
+    "max_players": 4,
+    "lan_support": true,
+    "online_support": false
+  }
+}

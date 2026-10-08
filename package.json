@@ -1,0 +1,31 @@
+{
+  "name": "ultimate-minecraft-night",
+  "version": "0.1.0",
+  "description": "Ultimate Custom Night + Minecraft: Java Edition mashup for Melty.gg",
+  "main": "src/core/controller.js",
+  "scripts": {
+    "test": "node src/core/tests.js",
+    "build": "bash build.sh",
+    "build-win": "build.bat",
+    "start": "echo 'Run through Melty.gg launcher'",
+    "dev": "echo 'Development mode - see office-ui.html'"
+  },
+  "keywords": [
+    "ucn",
+    "ultimate-custom-night",
+    "minecraft",
+    "mashup",
+    "melty",
+    "survival",
+    "game"
+  ],
+  "author": "Mashup Developer",
+  "license": "fan-project",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melty-gg/ultimate-minecraft-night"
+  }
+}
